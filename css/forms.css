@@ -2,6 +2,8 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: #fff; 
   height: 100%;
+  margin: 0;
+  overflow: hidden;
 }
 
 @media (max-width: 767px) {

@@ -34,3 +34,11 @@ function exibirResultado(mensagem)
 {
     //alert(mensagem);
 }
+
+document.getElementById('registrarCliente').addEventListener('submit',function(event){
+    event.preventDefault();
+
+    var nome = document.getElementById('inputNome').value;
+    var senha = document.getElementById('inputSenha').value;
+    var confirmaSenha = document.getElementById('inputConfirmar').value;
+})
