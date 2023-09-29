@@ -15,7 +15,6 @@ searchBtn.addEventListener("click", () => {
 })
 
 
-
 function exibeSenha() //precisa clicar duas vezes para alterar
 {
     var eyeIcon = document.querySelector('.toggle-password');
@@ -52,26 +51,6 @@ function confirmar() //precisa clicar duas vezes para alterar
         }
     });
 }
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     var eyeIcon = document.querySelector('.toggle-password');
-//     var passwordInput = document.getElementById('password');
-
-//     eyeIcon.addEventListener('click', function() {
-//         if (passwordInput.type === 'password') {
-//             passwordInput.type = 'text';
-//             eyeIcon.innerHTML = '<i class="bi bi-eye"></i>';
-//         } else {
-//             passwordInput.type = 'password';
-//             eyeIcon.innerHTML = '<i class="bi bi-eye-slash"></i>';
-//         }
-//     });
-// });
-
-
-
-
-
 
 function meuLogin()
 {
