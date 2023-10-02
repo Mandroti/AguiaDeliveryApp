@@ -41,7 +41,37 @@
         toggleNavbarMethod();
         $(window).resize(toggleNavbarMethod);
     });
-      
+
+    
+    // Main carousel
+    $(".carousel .owl-carousel").owlCarousel({
+        autoplay: true,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
+        items: 1,
+        smartSpeed: 300,
+        dots: false,
+        loop: true,
+        nav : false
+    });
+    
+    // Modal Video
+    $(document).ready(function () {
+        var $videoSrc;
+        $('.btn-play').click(function () {
+            $videoSrc = $(this).data("src");
+        });
+        console.log($videoSrc);
+
+        $('#videoModal').on('shown.bs.modal', function (e) {
+            $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+        })
+
+        $('#videoModal').on('hide.bs.modal', function (e) {
+            $("#video").attr('src', $videoSrc);
+        })
+    });
+    
     
     // Date and time picker
     $('#date').datetimepicker({
@@ -49,6 +79,53 @@
     });
     $('#time').datetimepicker({
         format: 'LT'
+    });
+
+
+    // Testimonials carousel
+    $(".testimonials-carousel").owlCarousel({
+        center: true,
+        autoplay: true,
+        dots: true,
+        loop: true,
+        responsive: {
+            0:{
+                items:1
+            },
+            576:{
+                items:1
+            },
+            768:{
+                items:2
+            },
+            992:{
+                items:3
+            }
+        }
+    });
+    
+    
+    // Related post carousel
+    $(".related-slider").owlCarousel({
+        autoplay: true,
+        dots: false,
+        loop: true,
+        nav : true,
+        navText : [
+            '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+            '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+        ],
+        responsive: {
+            0:{
+                items:1
+            },
+            576:{
+                items:1
+            },
+            768:{
+                items:2
+            }
+        }
     });
     
 })(jQuery);
@@ -60,36 +137,6 @@ function openModal() {
 function closeModal() {
     document.getElementById('myModal').style.display = 'none';
 }
-
-/*const produtos = [
-    {
-        nome: "Mini cheese Burger",
-        preco: "$9.00",
-        descricao: "Lorem ipsum dolor sit amet elit. Phasel nec preti facil",
-        imagemSrc: "images/menu-burger.jpg"
-    },    
-];
-
-function carregarProdutos(){
-    const container = document.querySelector('.menu-item');
-
-    for (const produto of produtos) {
-        const divProduto = document.createElement('div');
-        divProduto.classList.add('menu-item');
-
-        divProduto.innerHTML = `
-            <div class="menu-img">
-                <img src="${produto.imagemSrc}" alt="Image">
-            </div>
-            <div class="menu-text">
-                <h3><span>${produto.nome}</span> <strong>${produto.preco}</strong></h3>
-                <p>${produto.descricao}</p>
-            </div>
-        `;
-
-        container.appendChild(divProduto);
-    }
-}*/
 
 function decrementQuantity() {
     
@@ -125,3 +172,108 @@ function continuarComprando() {
 function irParaCarrinho() {
     closeModalCarrinho(); 
 }
+
+const prodsss = [
+    {
+        nome: "Mini cheese Burger",
+        preco: "$9.00",
+        descricao: "Lorem ipsum dolor sit amet elit. Phasel nec preti facil",
+        imagemSrc: "images/menu-burger.jpg"
+    },    {
+        nome: "Mini cheese Burger Bacon",
+        preco: "$19.00",
+        descricao: "Lorem ipsum dolor sit amet elit. Phasel nec preti facil",
+        imagemSrc: "images/menu-burger.jpg"
+    },   
+];
+
+function carregarProdutos(){
+    
+    const prodsss = [
+        {
+            nome: "Mini cheese Burger",
+            preco: "$9.00",
+            descricao: "Lorem ipsum dolor sit amet elit. Phasel nec preti facil",
+            imagemSrc: "images/menu-burger.jpg"
+        },    {
+            nome: "Mini cheese Burger Bacon",
+            preco: "$19.00",
+            descricao: "Lorem ipsum dolor sit amet elit. Phasel nec preti facil",
+            imagemSrc: "images/menu-burger.jpg"
+        },   
+        {
+            nome: "Mini cheese Burger Bacon",
+            preco: "$19.00",
+            descricao: "Lorem ipsum dolor sit amet elit. Phasel nec preti facil",
+            imagemSrc: "images/menu-burger.jpg"
+        },   
+        {
+            nome: "Mini cheese Burger Bacon",
+            preco: "$19.00",
+            descricao: "Lorem ipsum dolor sit amet elit. Phasel nec preti facil",
+            imagemSrc: "images/menu-burger.jpg"
+        },   
+        {
+            nome: "Mini cheese Burger Bacon",
+            preco: "$19.00",
+            descricao: "Lorem ipsum dolor sit amet elit. Phasel nec preti facil",
+            imagemSrc: "images/menu-burger.jpg"
+        },   
+        {
+            nome: "Mini cheese Burger Bacon",
+            preco: "$19.00",
+            descricao: "Lorem ipsum dolor sit amet elit. Phasel nec preti facil",
+            imagemSrc: "images/menu-burger.jpg"
+        },   
+        {
+            nome: "Mini cheese Burger Bacon",
+            preco: "$19.00",
+            descricao: "Lorem ipsum dolor sit amet elit. Phasel nec preti facil",
+            imagemSrc: "images/menu-burger.jpg"
+        },   
+        {
+            nome: "Mini cheese Burger Bacon",
+            preco: "$19.00",
+            descricao: "Lorem ipsum dolor sit amet elit. Phasel nec preti facil",
+            imagemSrc: "images/menu-burger.jpg"
+        },   
+        {
+            nome: "Mini cheese Burger Bacon",
+            preco: "$19.00",
+            descricao: "Lorem ipsum dolor sit amet elit. Phasel nec preti facil",
+            imagemSrc: "images/menu-burger.jpg"
+        },   
+        {
+            nome: "Mini cheese Burger Bacon",
+            preco: "$19.00",
+            descricao: "Lorem ipsum dolor sit amet elit. Phasel nec preti facil",
+            imagemSrc: "images/menu-burger.jpg"
+        },   
+        {
+            nome: "Mini cheese Burger Bacon",
+            preco: "$19.00",
+            descricao: "Lorem ipsum dolor sit amet elit. Phasel nec preti facil",
+            imagemSrc: "images/menu-burger.jpg"
+        },   
+    ];
+
+    const container = document.querySelector('.tab-content');
+
+    for (const produto of prodsss) {
+        const divProduto = document.createElement('div'); 
+        divProduto.classList.add('menu-item');
+
+        divProduto.innerHTML = `
+            <div class="menu-img">
+                <img src="${produto.imagemSrc}" alt="Image" onclick="openModal()">
+            </div>
+            <div class="menu-text">
+                <h3><span>${produto.nome}</span> <strong>${produto.preco}</strong></h3>
+                <p>${produto.descricao}</p>
+            </div>
+        `;
+
+        container.appendChild(divProduto);
+    }
+}
+
