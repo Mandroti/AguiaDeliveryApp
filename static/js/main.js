@@ -162,6 +162,7 @@ function continuarComprando() {
 
 function irParaCarrinho() {
     closeModalCarrinho(); 
+    window.location.href = 'carrinho.html'; 
 }
 
 const prodsss = [

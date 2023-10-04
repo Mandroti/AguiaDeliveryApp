@@ -15,41 +15,19 @@ searchBtn.addEventListener("click", () => {
 })
 
 
-function exibeSenha() //precisa clicar duas vezes para alterar
-{
-    var eyeIcon = document.querySelector('.toggle-password');
-    var passwordInput = document.getElementById('password');
-    eyeIcon.addEventListener('click', function() {
-        if (passwordInput.type === 'password') {
-            passwordInput.type = 'text';
-            eyeIcon.querySelector('i').classList.remove('bi-eye-slash');
-            eyeIcon.querySelector('i').classList.add('bi-eye');
-        } else {
-            passwordInput.type = 'password';
-            eyeIcon.querySelector('i').classList.remove('bi-eye');
-            eyeIcon.querySelector('i').classList.add('bi-eye-slash');
-        }
-    });
-}
+function exibeSenha(inputId) {
+    var eyeIcon = document.querySelector('#' + inputId + ' + .input-group-append .toggle-password');
+    var passwordInput = document.getElementById(inputId);
 
-function confirmar() //precisa clicar duas vezes para alterar
-{
-    var eyeIcon = document.querySelector('.toggle-password');
-    var passwordInput = document.getElementById('inputConfirmar');
-
-    
-    eyeIcon.addEventListener('click', function() {
-        if (passwordInput.type === 'password') {
-            passwordInput.type = 'text';
-            alert(passwordInput.value)
-            eyeIcon.querySelector('i').classList.remove('bi-eye-slash');
-            eyeIcon.querySelector('i').classList.add('bi-eye');
-        } else {
-            passwordInput.type = 'password';
-            eyeIcon.querySelector('i').classList.remove('bi-eye');
-            eyeIcon.querySelector('i').classList.add('bi-eye-slash');
-        }
-    });
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        eyeIcon.querySelector('i').classList.remove('bi-eye-slash');
+        eyeIcon.querySelector('i').classList.add('bi-eye');
+    } else {
+        passwordInput.type = 'password';
+        eyeIcon.querySelector('i').classList.remove('bi-eye');
+        eyeIcon.querySelector('i').classList.add('bi-eye-slash');
+    }
 }
 
 function meuLogin()
@@ -85,7 +63,6 @@ function meuLogin()
 
 function registraCliente()
 {
-    alert("AAAAAAAAAA")
     var nome = document.getElementById('inputNome').value;
         var senha = document.getElementById('password').value;
         var confirmaSenha = document.getElementById('inputConfirmar').value;
