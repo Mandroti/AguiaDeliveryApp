@@ -170,9 +170,13 @@ function criarCard(dado) {
     var cardHTML = `
         <div class="card" style="margin-right: -15px; margin-left: -15px">
         <div style="padding: 5px">
-            <div style="display: flex;"> 
+            <div style="display: flex;justify-content: space-between; "> 
                 <h4 style="margin: 10px 0px 0px 0px;">${dado.nome}</h4>
-                <i class="${dado.iconeEndereco}" style="margin-top: 16px;"></i>
+               
+                <button onclick="passarFase()" style="background-color:transparent; border-color:transparent" >
+                    <i class="${dado.iconeEndereco}" style="margin-top: 16px;margin-left: auto; font-size: 24px;"></i> 
+                </button>
+                            
             </div>            
             <p style="color: lightgray;">${dado.horario}</p>
             <div style="display: flex;">
@@ -196,3 +200,28 @@ for (var i = 0; i < dados.length; i++) {
     var card = criarCard(dados[i]);
     pendentesContainer.innerHTML += card;
 }
+
+var producaoContainer = document.getElementById('producao');
+
+for (var i = 0; i < dados.length; i++) {
+    var card = criarCard(dados[i]);
+    producaoContainer.innerHTML += card;
+}
+
+var disponivelContainer = document.getElementById('disponivel');
+
+for (var i = 0; i < dados.length; i++) {
+    var card = criarCard(dados[i]);
+    disponivelContainer.innerHTML += card;
+}
+
+
+// function passarFase(){
+//     const modal = document.getElementById('myModal');
+//     modal.style.display = 'block';
+// }
+
+// function fecharModal() {
+//     const modal = document.getElementById('myModal');
+//     modal.style.display = 'none';
+// }

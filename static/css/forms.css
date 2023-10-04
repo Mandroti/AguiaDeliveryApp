@@ -1,6 +1,6 @@
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #ebe9e9; 
+  background-color: #efefef; 
   height: 100vh;
   margin: 0;
 }
@@ -57,7 +57,7 @@ h2 {
     height: 200px; } }
 
 .half .contents {
-  background: #ebe9e9; }
+  background: #efefef; ; }
 
 .half .contents, .half .bg {
   width: 50%; }
