@@ -5,6 +5,67 @@ const body = document.querySelector('body'),
     modeSwitch = body.querySelector(".toggle-switch"),
     modeText = body.querySelector(".mode-text");
 
+    
+function applyPhoneMask(event) {
+    let input = event.target;
+    let value = input.value;
+    if (!value) return "";
+    value = value.replace(/\D/g,'');
+    value = value.replace(/(\d{2})(\d)/,"($1) $2");
+    value = value.replace(/(\d)(\d{4})$/,"$1-$2");
+    input.value = value;
+}
+
+const applyZipCodeMask = (event) => {
+    let input = event.target;
+    let value = input.value;
+    
+    if (!value) return "";
+    
+    value = value.replace(/\D/g,'');
+    value = value.replace(/(\d{5})(\d)/,'$1-$2');
+    
+    input.value = value;
+}
+
+function applyCNPJMask(event) {
+    let input = event.target;
+    let value = input.value;
+    value = value.replace(/\D/g,"");                           
+    value = value.replace(/^(\d{2})(\d)/,"$1.$2");              
+    value = value.replace(/^(\d{2})\.(\d{3})(\d)/,"$1.$2.$3"); 
+    value = value.replace(/\.(\d{3})(\d)/,".$1/$2");          
+    value = value.replace(/(\d{4})(\d)/,"$1-$2");             
+    input.value = value;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const cepInput = document.getElementById("inputCep");
+
+    cepInput.addEventListener('blur', function() {
+        const cepValue = cepInput.value.replace(/[^0-9]+/, '');
+        if (cepValue.length === 8) {
+            fetchCEP(cepValue);
+        }
+    });
+});
+
+function fetchCEP(cepValue) {
+    const url = `https://viacep.com.br/ws/${cepValue}/json/`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(json => {
+            if (json.logradouro) {
+                document.getElementById('inputLog').value = json.logradouro;
+                document.getElementById('inputBairro').value = json.bairro;
+                document.getElementById('inputCit').value = json.localidade;
+                //document.querySelector('input[name=estado]').value = json.uf;
+            }
+        });
+}
+
+
 
 toggle.addEventListener("click", () => {
     sidebar.classList.toggle("close");
@@ -202,3 +263,4 @@ for (var i = 0; i < dados.length; i++) {
 //     const modal = document.getElementById('myModal');
 //     modal.style.display = 'none';
 // }
+

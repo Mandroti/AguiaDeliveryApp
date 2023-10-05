@@ -29,12 +29,12 @@
       <div class="container">
         <div class="row align-items-center justify-content-center align-items-center-mobile">
           <div class="col-md-10">
-            <h3>Criar Conta no <strong>Águia Delivery</strong></h3>            
+            <h3>Criar Conta no <strong>Águia Delivery Estabelecimento</strong></h3>            
             <form id="registrarCliente">
                
                 <div class="form-group">
-                  <label for="inputAddress">Nome Completo</label>
-                  <input type="text" class="form-control" id="inputNome" placeholder="Insira seu Nome" required> 
+                  <label for="inputAddress">Nome do Estabelecimento</label>
+                  <input type="text" class="form-control" id="inputNome" placeholder="Insira o Nome" required> 
                 </div>
                 <div class="form-row">                
                     <div class="form-group last mb-3 col-md-6 " id="divS">
@@ -60,6 +60,42 @@
                       </div>
                   </div>
                 </div>   
+                <div class="form-row">                
+                    <div class="form-group last mb-3 col-md-6 " id="divS">
+                      <label for="inputEmail4" id="labelEmail">E-mail</label>
+                      <div class="input-group">
+                          <input type="text" class="form-control" id="inputEmail" placeholder="Insira o E-mail" required>
+                      </div>
+                  </div>
+                  <div class="form-group last mb-3 col-md-6 " id="divC">
+                      <label for="inputPassword4" id="labelCnpj">CNPJ</label>
+                      <div class="input-group">
+                          <input type="tel" class="form-control" id="inputCnpj" placeholder="00.000.000/0000-00" required maxlength="18" onkeyup="applyCNPJMask(event)">
+                      </div>
+                  </div>
+                </div>  
+                <!-- <div class="form-row">                
+                    <div class="form-group last mb-3 col-md-6 " id="divS">
+                      <label for="inputEmail4" id="labelEmail">Horário Abertura</label>
+                      <div class="input-group">
+                        <select id="abertura" name="abertura">
+                            <option value="08:00">08:00</option>
+                            <option value="08:30">08:30</option>
+                            <option value="09:00">09:00</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group last mb-3 col-md-6 " id="divC">
+                      <label for="inputPassword4" id="labelCnpj">Horário Fechamento</label>
+                      <div class="input-group">
+                        <select id="fechamento" name="fechamento">
+                            <option value="20:00">20:00</option>
+                            <option value="20:30">20:30</option>
+                            <option value="21:00">21:00</option>
+                          </select>
+                      </div>
+                  </div>
+                </div>   -->
                 <div class="form-row">
                     <div class="form-group col-md-6">                    
                       <label for="inputEmail4">Contato</label>
@@ -67,25 +103,25 @@
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputPassword4">CEP</label>
-                      <input type="text" class="form-control" id="inputCep" name="cep" placeholder="00000-000" required maxlength="9" onkeyup="applyZipCodeMask(event)">
+                      <input type="text" class="form-control" id="inputCep" placeholder="00000-000" required maxlength="9" onkeyup="applyZipCodeMask(event)">
                     </div>                    
                 </div>
                 <div class="form-group">
                     <label for="inputAddress">Logradouro</label>
-                    <input type="text" class="form-control" id="inputLog" name="endereco" placeholder="Seu Endereço" required>
+                    <input type="text" class="form-control" id="inputLog" placeholder="Endereço" required>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">                    
                       <label for="inputEmail4">Bairro</label>
-                      <input type="text" class="form-control" id="inputBairro" name="bairro" placeholder="Seu Bairro" required>
+                      <input type="text" class="form-control" id="inputBairro" placeholder="Bairro" required>
                     </div>
                     <div class="form-group col-md-3">
                       <label for="inputPassword4">Numero</label>
-                      <input type="number" class="form-control" id="inputNum" placeholder="000" name="numero" required>
+                      <input type="number" class="form-control" id="inputNum" placeholder="000" required>
                     </div>
                     <div class="form-group col-md-5">
                       <label for="inputZip">Cidade</label>
-                      <input type="text" class="form-control" id="inputCit" placeholder="Sua Cidade" name="cidade" required>
+                      <input type="text" class="form-control" id="inputCit" placeholder="Sua Cidade" required>
                   </div>
                 </div>            
                 <button type="submit" id="submit" class="btn btn-block" style="background-color: #ffbe33;" onclick="registraCliente()">CRIAR CONTA</button>
