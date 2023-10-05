@@ -65,8 +65,6 @@ function fetchCEP(cepValue) {
         });
 }
 
-
-
 toggle.addEventListener("click", () => {
     sidebar.classList.toggle("close");
 })
@@ -124,7 +122,7 @@ function meuLogin()
 
 function registraCliente()
 {
-    var nome = document.getElementById('inputNome').value;
+        var nome = document.getElementById('inputNome').value;
         var senha = document.getElementById('password').value;
         var confirmaSenha = document.getElementById('inputConfirmar').value;
         var contato = document.getElementById('inputContato').value;
@@ -162,10 +160,24 @@ function registraCliente()
             event.preventDefault();
         }
         else{            
-            document.getElementById('divS').style.backgroundColor = 'red';
-            document.getElementById('divC').style.backgroundColor = 'red';
+           // document.getElementById('senhaDiferenteAlert').style.display = 'block';
         }        
 }
+function verificaSenhas() {
+    event.preventDefault(); 
+    var senha = document.getElementById('password').value;
+    var confirmarSenha = document.getElementById('inputConfirmar').value;
+
+    if (senha !== confirmarSenha) {
+        document.getElementById('senhaDiferenteAlert').style.display = 'block';
+        return false;
+    } else {
+        document.getElementById('senhaDiferenteAlert').style.display = 'none';
+        return true;
+    }
+}
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
     pedidosPendentes();

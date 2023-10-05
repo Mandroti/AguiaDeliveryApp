@@ -33,7 +33,7 @@
             <form action="#" method="post">
               <div class="form-group first">
                 <label for="username">Insira seu Telefone:</label>
-                <input type="text" class="form-control" placeholder="00000-0000" id="username">
+                <input type="tel" class="form-control" placeholder="(00)00000-0000" id="username" maxlength="15" onkeyup="applyPhoneMask(event)" required>
               </div>                         
               <input type="submit" value="RECUPERAR" class="btn btn-block" style="background-color: #ffbe33;">
             </form>
@@ -43,5 +43,6 @@
     </div>
   </div>   
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/login.js"></script>
   </body>
 </html>
