@@ -122,12 +122,9 @@
 
 
 function openModal() {
-    document.getElementById('myModal').style.display = 'block';
+    window.location.href = "detalhesProduto.html";
 }
 
-function closeModal() {
-    document.getElementById('myModal').style.display = 'none';
-}
 
 function decrementQuantity() {
     
@@ -147,7 +144,6 @@ function incrementQuantity() {
 }
 
 function openModalCarrinho() {
-    closeModal();
     document.getElementById('myModalCarrinho').style.display = 'block';
 }
 
@@ -157,7 +153,7 @@ function closeModalCarrinho() {
 }
 
 function continuarComprando() {
-    closeModalCarrinho(); 
+    window.location.href = "cardapioCliente.html";
 }
 
 function irParaCarrinho() {

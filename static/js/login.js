@@ -159,23 +159,24 @@ function registraCliente()
             .catch(error => console.error('Erro:', error));        
             event.preventDefault();
         }
-        else{            
-           // document.getElementById('senhaDiferenteAlert').style.display = 'block';
+        else{          
+            event.preventDefault();   
+            document.getElementById('senhaDiferenteAlert').style.display = 'block';
         }        
 }
-function verificaSenhas() {
-    event.preventDefault(); 
-    var senha = document.getElementById('password').value;
-    var confirmarSenha = document.getElementById('inputConfirmar').value;
+// function verificaSenhas() {
+//     event.preventDefault(); 
+//     var senha = document.getElementById('password').value;
+//     var confirmarSenha = document.getElementById('inputConfirmar').value;
 
-    if (senha !== confirmarSenha) {
-        document.getElementById('senhaDiferenteAlert').style.display = 'block';
-        return false;
-    } else {
-        document.getElementById('senhaDiferenteAlert').style.display = 'none';
-        return true;
-    }
-}
+//     if (senha !== confirmarSenha) {
+//         document.getElementById('senhaDiferenteAlert').style.display = 'block';
+//         return false;
+//     } else {
+//         document.getElementById('senhaDiferenteAlert').style.display = 'none';
+//         return true;
+//     }
+// }
 
 
 
@@ -218,14 +219,19 @@ var dados = [
 
 function criarCard(dado) {
     var cardHTML = `
-        <div class="card" style="margin-right: -15px; margin-left: -15px">
+        <div class="card" style="margin-right: -15px; margin-left: -15px" onclick="pedidosCliente()">
         <div style="padding: 5px">
             <div style="display: flex;justify-content: space-between; "> 
-                <h4 style="margin: 10px 0px 0px 0px;">${dado.nome}</h4>
-               
-                <button onclick="passarFase()" style="background-color:transparent; border-color:transparent" >
+                <h4 style="margin: 10px 0px 0px 0px;">${dado.nome}</h4>   
+            
+                <div class="dropdown">
+                    <button class="mainmenubtn">
                     <i class="${dado.iconeEndereco}" style="margin-top: 16px;margin-left: auto; font-size: 24px;"></i> 
-                </button>
+                    </button>
+                    <div class="dropdown-child">
+                        <a href="http://wwww.yourdomain.com/page1.html">Pronto</a>                        
+                    </div>
+                </div>
                             
             </div>            
             <p style="color: lightgray;">${dado.horario}</p>
@@ -276,3 +282,7 @@ for (var i = 0; i < dados.length; i++) {
 //     modal.style.display = 'none';
 // }
 
+function pedidosCliente(){
+    const modal = document.getElementById('myModal');
+    modal.style.display = 'block';
+}
