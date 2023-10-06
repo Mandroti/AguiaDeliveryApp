@@ -47,7 +47,7 @@
             <section>                
               <div class="card">
                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/Food/8-col/img (5).jpg" class="img-fluid" />
+                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/Food/8-col/img (5).jpg" class="img-fluid mobile-only" />
                   <a href="#!">
                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                   </a>
@@ -76,12 +76,17 @@
                         </select>
                         <hr class="my-2"/>
                     <label><strong>Opções:</strong></label>
-                        <select multiple class="Complementos" style="width: 100%;">
+                        <!-- <select multiple class="Complementos" style="width: 100%;">
                             <option value="opcao1">Opção 1</option>
                             <option value="opcao2">Opção 2</option>
                             <option value="opcao3">Opção 3</option>
                             <option value="opcao4">Opção 4</option>
-                        </select>
+                        </select> -->
+                        <ul style="list-style-type: none;
+                        padding: 0;">
+                            <li style="font-size: 18px;
+                            margin-bottom: 10px;">Pão Brioche - R$ 10,00</li>                            
+                          </ul>
                         <hr class="my-2"/>
                     <label for="observacoes"><strong>Observações:</strong></label>
                         <textarea id="observacoes" name="observacoes" rows="4" cols="50" class="observacao"></textarea>
@@ -98,7 +103,7 @@
               
             </section>
           </div>
-          
+
           <div id="myModalCarrinho" class="modalCarrinho">
             <!-- Conteúdo da modal -->
             <div class="modal-content">

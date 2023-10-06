@@ -119,7 +119,6 @@ function meuLogin()
     event.preventDefault();
 }    
 
-
 function registraCliente()
 {
         var nome = document.getElementById('inputNome').value;

@@ -1,6 +1,18 @@
 /*******************************/
 /********* General CSS *********/
 /*******************************/
+/* Estilos padrão para a imagem */
+.img-fluid {
+    display: none; /* Inicialmente, oculta a imagem */
+  }
+  
+  /* Mostra a imagem apenas em dispositivos com largura máxima de 768 pixels (tamanhos de tela de tablet e menor) */
+  @media (max-width: 768px) {
+    .mobile-only {
+      display: block; /* Exibe a imagem em dispositivos móveis */
+    }
+  }
+  
 
 .variacoes{
     background-color: whitesmoke;
