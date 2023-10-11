@@ -62,7 +62,7 @@ ul li::before {
   background-color: #fefefe;
   padding: 20px;
   border: 1px solid #888;
-  max-width: 50vw; 
+  max-width: 30vw; 
   width: 100%; 
   box-sizing: border-box; 
   text-align: center; 

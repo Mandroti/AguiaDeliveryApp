@@ -3,19 +3,19 @@ var dados = [
         nome: "Karolaine Mandroti",
         horario: "03 out 10:42 (há poucos segundos)",
         endereco: "Rua Minas Gerais, 64",
-        iconeEndereco: "fas fa-utensils",
+        iconeEndereco: "fas fa-map-pin",
         tipoEntrega: "Delivery",
-        iconeEntrega: "fas fa-hourglass-half",
-        identificador: "card1",
-        tipoPagamento: "Cartão de Crédito"
+        iconeEntrega: "fas fa-motorcycle",
+        identificador: "card2",
+        tipoPagamento: "Cartão de Débito",
     },
     {
         nome: "Isabela Mandroti",
         horario: "03 out 10:42 (há poucos segundos)",
         endereco: "Rua Minas Gerais, 64",
-        iconeEndereco: "fas fa-utensils",
+        iconeEndereco: "fas fa-map-pin",
         tipoEntrega: "Delivery",
-        iconeEntrega: "fas fa-hourglass-half",
+        iconeEntrega: "fas fa-motorcycle",
         identificador: "card2",
         tipoPagamento: "Cartão de Débito",
     },
@@ -23,9 +23,9 @@ var dados = [
         nome: "Miguel Mandroti",
         horario: "03 out 10:42 (há poucos segundos)",
         endereco: "Rua Minas Gerais, 64",
-        iconeEndereco: "fas fa-utensils",
+        iconeEndereco: "fas fa-map-pin",
         tipoEntrega: "Delivery",
-        iconeEntrega: "fas fa-hourglass-half",
+        iconeEntrega: "fas fa-motorcycle", //fa-location-arrow fa-map-marked-alt
         identificador: "card3",
         tipoPagamento: "Cartão de Débito",
     },
@@ -64,11 +64,11 @@ function criarCard(dado) {
             
                 <div class="dropdown">
                     <button class="mainmenubtn">
-                    <i class="${dado.iconeEndereco}" style="margin-top: 16px;margin-left: auto; font-size: 24px;"></i> 
+                    <i class="fas fa-bars" style="margin-top: 16px;margin-left: auto; font-size: 24px;"></i> 
                     </button>
                     <div class="dropdown-child">
-                        <a href="http://wwww.yourdomain.com/page1.html">Pronto</a>     
-                        <a href="http://wwww.yourdomain.com/page1.html">Cancelar</a>                        
+                        <a href="#" onclick="proximaEtapa()">Pronto</a>     
+                        <a href="#" onclick="cancelarPedido()">Cancelar</a>                        
                     </div>
                 </div>
                             
@@ -83,7 +83,7 @@ function criarCard(dado) {
                 <p style="color: gray; margin-left: 10px;">${dado.tipoEntrega}</p>
             </div>
             <div style="display: flex; align-items: center;">
-                <i class="${dado.iconeEntrega}" style="margin-bottom: 14px;"></i>
+                <i class="fas fa-money-bill-alt" style="margin-bottom: 14px;"></i>
                 <p style="color: gray; margin-left: 10px;">${dado.tipoPagamento}</p>
             </div>
             <div style="display: flex; flex-direction: column;">
@@ -91,14 +91,14 @@ function criarCard(dado) {
                 <div style="display:none;padding:10px; margin-top: 13px" id="${dado.identificador}">
                     <div class="categoria">
                     <div class="coluna">
-                        <h6 style="color: #ffbe33;">Itens do Pedido</h6>
+                        <h6 style="color: #ffbe33; text-align:start; font-size:18px; margin-left: 30px">Itens do Pedido</h6>
                         <ul class="listaPedidos">
                             <li>
                                 <div style="display:flex; margin-bottom: -15px">
                                     <p>1X &emsp;</p>
                                     <p>Hamburguer de Frango</p>
                                 </div>
-                                <div >
+                                <div style="display: none;">
                                     <p style="display: inline; font-size: 12px;">1x&ensp; Bacon&ensp;</p>
                                     <p style="display: inline; font-size: 12px;">1x&ensp; Milho&ensp;</p>
                                     <p style="display: inline; font-size: 12px;">1x&ensp; Calabresa&ensp;</p>
@@ -111,19 +111,19 @@ function criarCard(dado) {
                                 </div>                            
                             </li>    
                             <li>
-                                <div style="display:flex;">
+                                <div style="display:flex;  margin-bottom: -15px">
                                     <p>1X &emsp;</p>
                                     <p>Pizza Brócolis</p>
                                 </div>
                             </li>        
                             <li>
-                                <div style="display:flex">
+                                <div style="display:flex; margin-bottom: -15px">
                                     <p>3X &emsp;</p>
                                     <p>Pastel de Queijo</p>
                                 </div>
                             </li>      
                             <li>
-                                <div style="display:flex;">
+                                <div style="display:flex;  margin-bottom: -15px">
                                     <p>1X &emsp;</p>
                                     <p>Pizza Brócolis</p>
                                 </div>
@@ -154,7 +154,6 @@ function toggleCard(cardId) {
         cardBody.style.display = 'none';
     }
 }
-
 // var producaoContainer = document.getElementById('producao');
 
 // for (var i = 0; i < dados.length; i++) {
@@ -179,9 +178,43 @@ function toggleCard(cardId) {
 //     const modal = document.getElementById('myModal');
 //     modal.style.display = 'none';
 // }
-  
 
 function pedidosCliente(){
+    
+}
+
+function cancelarPedido(){
     const modal = document.getElementById('myModal');
     modal.style.display = 'block';
+
+    // Adicionando uma função para fechar o modal
+    const fecharModal = document.getElementById('fecharModal');
+    fecharModal.addEventListener('click', function(){
+        modal.style.display = 'none';
+    });
+
+    const fechar = document.getElementById('fechar');
+    fechar.addEventListener('click', function(){
+        modal.style.display = 'none';
+    });
+}
+
+function confirmarCancelarProduto(){
+   
+}
+
+function proximaEtapa(){
+    const modal = document.getElementById('myModalEtapa');
+    modal.style.display = 'block';
+
+    // Adicionando uma função para fechar o modal
+    const fecharModal = document.getElementById('fecharModalEtapa');
+    fecharModal.addEventListener('click', function(){
+        modal.style.display = 'none';
+    });
+
+    const fechar = document.getElementById('fecharEtapa');
+    fechar.addEventListener('click', function(){
+        modal.style.display = 'none';
+    });
 }
