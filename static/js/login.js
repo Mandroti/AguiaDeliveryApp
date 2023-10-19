@@ -91,6 +91,7 @@ function exibeSenha(inputId) {
 
 function meuLogin()
 {
+    //UM VAI PARA O CARDAPIO E OUTRO PARA A DASHBOARD
     const contato = document.getElementById('username').value;
     const senha = document.getElementById('password').value;
     
@@ -163,17 +164,38 @@ function registraCliente()
             document.getElementById('senhaDiferenteAlert').style.display = 'block';
         }        
 }
-// function verificaSenhas() {
-//     event.preventDefault(); 
-//     var senha = document.getElementById('password').value;
-//     var confirmarSenha = document.getElementById('inputConfirmar').value;
 
-//     if (senha !== confirmarSenha) {
-//         document.getElementById('senhaDiferenteAlert').style.display = 'block';
-//         return false;
-//     } else {
-//         document.getElementById('senhaDiferenteAlert').style.display = 'none';
-//         return true;
-//     }
-// }
+function checkTelefone(event)
+{
+    var value = event.target.value;
 
+    var phoneRegex = /^\d{11,}$/;
+
+    if (phoneRegex.test(value)) {
+        applyPhoneMask(event);
+    }
+}
+
+function recuperarSenha()
+{
+    document.getElementById('naoTelefone').style.display = 'none';
+    var telefone = document.getElementById('username').value;
+  
+    var regex = /^\([1-9]{2}\) 9[0-9]{4}-[0-9]{4}$/;
+
+    if (regex.test(telefone)) {
+        event.preventDefault();   
+        document.getElementById('mudarSenha').style.display = 'block';
+
+        //PUT no cadastro do cliente e encaminha para o cardapio
+    } else {
+        event.preventDefault();   
+        document.getElementById('naoTelefone').style.display = 'block';
+    }
+   
+}
+
+function cadastrarEstabelecimento(){
+    event.preventDefault();   
+    window.location.href = "aguardandoEmail.html";
+}
